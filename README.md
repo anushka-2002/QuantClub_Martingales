@@ -33,11 +33,11 @@ Calculate the profit (or loss) that the gambler will face after nth bet.
 Solution:
 
 Case 1: You lose all first n bets, then the loss you will be gone through will be <br/>
-W = -(1+2+22+23 …... + 2n-1)
+W = - (1 + 2 + 2<sup>2</sup> + 2<sup>3</sup> ... + 2<sup>n-1</sup>)
 
 Case 2: You win at the nth bet- <br/>
- W = -(1+2+22+23 …... + 2n-2) + 2n-1 <br/>
-   = -(2n-1-1) + 2n-1 <br/>
+ W = - (1 + 2 + 2<sup>2</sup> + 2<sup>3</sup> ... + 2<sup>n-2</sup>) + 2<sup>n-1</sup> <br/>
+   = - (2<sup>n-1</sup> - 1) + 2<sup>n-1</sup> <br/>
    = 1
  
 So, you can see in this case, either we are going bankrupt (probability of which is very less)
@@ -63,7 +63,7 @@ The sample space for our experiment will be a set of all the possible outcomes -
 
 As the sample space is finite, we will take the σ - algebra, F (set of all the events possible),
 as the power set of Ω -<br/>
-F = 2Ω
+F = 2<sup>Ω</sup>
 
 Now starting with time t = 0,
 
@@ -73,9 +73,9 @@ know is our sample space for the experiment. Given an outcome w, the only events
 are Ω and φ. This is because we already know whether w will belong in Ω or not.
 
 Making a set of all the events that have been revealed,<br/>
-F0 = {φ, Ω}
+F<sub>0</sub> = {φ, Ω}
 
-We can see that F0 itself is a σ - algebra. This will be the first σ - algebra of our filtration.
+We can see that F<sub>0</sub> itself is a σ - algebra. This will be the first σ - algebra of our filtration.
 
 At time t = 1,
 
@@ -83,34 +83,34 @@ The coin has been tossed once, and we have learnt some more information about th
 experiment. This extra information helps us reveal two new events (apart from Ω and φ).
 
 The event of the first toss is a head,<br/>
-AH = {HHH, HHT, HTH, HTT}<br/>
+A<sub>H</sub> = {HHH, HHT, HTH, HTT}<br/>
 And the event of the first toss is a tail,<br/>
-AT = {THH, THT, TTH, TTT}
+A<sub>T</sub> = {THH, THT, TTH, TTT}
 
 That is, given an outcome w, we will already know whether the first toss was an H or T, thus
-revealing the events AH and AT.
+revealing the events A<sub>H</sub>  and A<sub>H</sub> .
 
 The set of all the events that have been revealed will now be,<br/>
-F1 = {φ, Ω, AH, AT}
+F<sub>1</sub> = {φ, Ω, A<sub>H</sub>, A<sub>T</sub>}
 
-Notice that F1 is a σ - algebra. This will be the next σ - algebra of our filtration.
+Notice that F<sub>1</sub> is a σ - algebra. This will be the next σ - algebra of our filtration.
 
 Similarly, at time t = 2,
 
 The coin has now been tossed twice. The new information will reveal many new events.
 Some of them are,<br/>
 the event of the first two tosses is a head,<br/>
-AHH = {HHH, HHT}<br/>
+A<sub>HH</sub>= {HHH, HHT}<br/>
 the event of the first toss is a head and the second is a tail,<br/>
-AHT = {HTH, HTT}<br/>
+A<sub>HT</sub> = {HTH, HTT}<br/>
 and so on.
 
 Note that the unions and complements of the revealed events will also be revealed.
 
 The set of all the events that have been revealed will now be,<br/>
-F2 = {φ, Ω, AH, AT, AHH, AHT, ATH, ATT, ACHH, ACHT, ACTH, ACTT, AHH U AHT, ATH U ATT, AHT U ATH, AHH U ATT}
+F<sub>2</sub> = {φ, Ω, A<sub>H</sub>, A<sub>T</sub>, A<sub>HH</sub>, A<sub>HT</sub>, A<sub>TH</sub>, A<sub>TT</sub>, A<sup>C</sup><sub>HH</sub>, A<sup>C</sup><sub>HT</sub>, A<sup>C</sup><sub>TH</sub>, A<sup>C</sup><sub>TT</sub>, A<sub>HH</sub> U A<sub>HT</sub>, A<sub>TH</sub> U A<sub>TT</sub>, A<sub>HT</sub> U A<sub>TH</sub>, A<sub>HH</sub> U A<sub>TT</sub>}
 
-Notice that F2 is a σ - algebra. This will be the next σ - algebra of our filtration.
+Notice that F<sub>2</sub> is a σ - algebra. This will be the next σ - algebra of our filtration.
 
 Finally, at time t = 3,
 
@@ -118,12 +118,12 @@ The experiment is complete. For any outcome w, we now have information about all
 This means all the events in the σ - algebra have been revealed.
 
 The set of all the events that have been revealed will now be,<br/>
-F3 = F
+F<sub>3</sub> = F
 
-We can observe that these σ - algebras, F0, F1, F2, and F3 are such that,<br/>
-F0 ⊂ F1 ⊂ F2 ⊂ F3 = F
+We can observe that these σ - algebras, F<sub>0</sub>, F<sub>1</sub>, F<sub>2</sub>, and F<sub>3</sub> are such that,<br/>
+F<sub>0</sub> ⊂ F<sub>1</sub> ⊂ F<sub>2</sub> ⊂ F<sub>3</sub> = F
 
-This family of σ - algebras, {Fn} 0 ≤ n ≤ 3, can be called a filtration.
+This family of σ - algebras, {F<sub>n</sub>}<sub>0 ≤ n ≤ 3</sub> , can be called a filtration.
 
 Now that we have a clear understanding of filtrations, let us give a more formal definition:
 Given a probability space (Ω, F, P) and some T > 0,<br/>
@@ -132,7 +132,7 @@ F(t) ⊂ F<br/>
 and for some 0 ≤ s, t ≤ T and s ≤ t, the σ - algebras F(s) and F(t) are such that<br/>
 F(s) ⊆ F(t).
 
-Then the family of σ-algebras → {F(t)} 0 ≤ t ≤ T is called a filtration that is associated with the
+Then the family of σ-algebras → {F(t)}<sub>0 ≤ t ≤ T</sub> is called a filtration that is associated with the
 probability space (Ω, F, P).
 
 ## MARTINGALES
@@ -151,48 +151,48 @@ $5 after 100 such tosses. As a result, your expected value after the 101st coin 
 Isn't it straightforward? This is the core concept of Martingales; we should grasp the
 basic mathematics underlying it to have delve more into it. 
 
-1. Say, {Fn}n≥0 is an increasing sequence of σ−algebras (filtration) in a probability
-space (Ω, F, P). Let X0, X1, X2 …. Xn is an adapted sequence (Xn ∈ Fn) of integrable
-real valued random variable such that E(Xn+1) < ∞, the sequence X0, X1, X2 …. Xn is
-said to be a Martingale relative to the filtration {Fn}n≥0 if <br/>
- E (Xn+1 |Fn) = Xn (Martingale condition)
+1. Say, {F<sub>n</sub>}<sub>n≥0</sub> is an increasing sequence of σ−algebras (filtration) in a probability
+space (Ω, F, P). Let X<sub>0</sub>, X<sub>1</sub>, X<sub>2</sub> … X<sub>n</sub> is an adapted sequence (X<sub>n</sub> ∈ F<sub>n</sub>) of integrable
+real valued random variable such that E(X<sub>n+1</sub>) < ∞, the sequence X<sub>0</sub>, X<sub>1</sub>, X<sub>2</sub> … X<sub>n</sub> is
+said to be a Martingale relative to the filtration {F<sub>n</sub>}<sub>n≥0</sub> if <br/>
+ E (X<sub>n+1</sub> |F<sub>n</sub>) = X<sub>n</sub> (Martingale condition)
  
 1. We have, <br/>
- E(Xn+1|Fn) = Xn. <br/>
- E(Xn+k|Fn) = E((Xn+k|Fn+k-1)|Fn) (Using Tower’s property)<br/>
- = E(Xn+k-1|Fn) (Using Martingale)<br/>
+ E (X<sub>n+1</sub> |F<sub>n</sub>) = X<sub>n</sub> <br/>
+ E (X<sub>n+k</sub> |F<sub>n</sub>) = E((X<sub>n+k</sub>|F<sub>n+k-1</sub>)|F<sub>n</sub>) (Using Tower’s property)<br/>
+ = E(X<sub>n+k-1</sub>|F<sub>n</sub>) (Using Martingale)<br/>
 .<br/>
 .<br/>
 .<br/>
- = E(Xn+1|Fn)<br/>
- = Xn 
+ = E(X<sub>n+1</sub>|F<sub>n</sub>)<br/>
+ = X<sub>n</sub>
  
 1.  The expectation of next value in sequence to be equal to current value, there are
 several types of martingales sequences, the most basic one is sums of independent,
-mean zero random variables. Let Y1, Y2... be such a series; then with following
+mean zero random variables. Let Y<sub>1</sub>, Y<sub>2</sub>... be such a series; then with following
 conditions,<br/>
- E(Yi) = 0<br/>
- Fn = σ (Y1, Y2, Y3…. Yn)<br/>
+ E(Y<sub>i</sub>) = 0<br/>
+ F<sub>n</sub> = σ (Y<sub>1</sub>, Y<sub>2</sub>, Y<sub>3</sub>…. Y<sub>n</sub>)<br/>
 the partial sums sequence:<br/>
- Xn = Y1 + Y2 + Y3… Yn<br/>
-is a martingale in comparison to the natural filtering caused by the variables Yn. The
+ X<sub>n</sub> = Y<sub>1</sub> + Y<sub>2</sub> + Y<sub>3</sub> … + Y<sub>n</sub><br/>
+is a martingale in comparison to the natural filtering caused by the variables Y<sub>n</sub>. The
 linearity and stability features, as well as the independence law for conditional
 expectation, make this easy to verify:<br/>
- E (Xn+1 |Fn) = E (Xn +Yn+1 |Fn)<br/>
- = E (Xn |Fn) + E (Yn+1 |Fn) (Linearity)<br/>
- = Xn +E(Yn+1)<br/>
- = Xn.
+ E (X<sub>n+1</sub> |F<sub>n</sub>) = E (X<sub>n</sub> +Y<sub>n+1</sub>  |F<sub>n</sub> )<br/>
+ = E (X<sub>n</sub> |F<sub>n</sub>) + E (Y<sub>n+1</sub>  |F<sub>n</sub> ) (Linearity)<br/>
+ = X<sub>n</sub>  +E(Y<sub>n+1</sub> )<br/>
+ = X<sub>n</sub> 
  
 Example:
 
 We went through a 3-coin toss example in the filtration part, now let's do the same
 thing in Martingales. If we apply the random variables and probability terms to the
-three coin-toss examples, we get Xn, which is the total amount won/lost in n bets.
+three coin-toss examples, we get X<sub>n</sub> , which is the total amount won/lost in n bets.
 
-The profit/loss on the nth bet is represented by Yn. Fn is a collection of values that
-may be obtained via the use of n bets. So, if we have been given a Fn that has led us
-to an Xn value, we may claim that our value X will not change after one more bet
-since the Yn+1 expectation will be zero owing to fair toss.
+The profit/loss on the nth bet is represented by Y<sub>n</sub> . F<sub>n</sub>  is a collection of values that
+may be obtained via the use of n bets. So, if we have been given a F<sub>n</sub> that has led us
+to an X<sub>n</sub>  value, we may claim that our value X will not change after one more bet
+since the Y<sub>n+1</sub>  expectation will be zero owing to fair toss.
 
 Now, once we have done the basic mathematics of the martingales we can move
 towards the applications of Martingales in stock market.
