@@ -33,12 +33,17 @@ Calculate the profit (or loss) that the gambler will face after nth bet.
 Solution:
 
 Case 1: You lose all first n bets, then the loss you will be gone through will be <br/>
-W = - (1 + 2 + 2<sup>2</sup> + 2<sup>3</sup> ... + 2<sup>n-1</sup>)
+<p align="center">
+    W = - (1 + 2 + 2<sup>2</sup> + 2<sup>3</sup> ... + 2<sup>n-1</sup>)
+</p>
+
 
 Case 2: You win at the nth bet- <br/>
- W = - (1 + 2 + 2<sup>2</sup> + 2<sup>3</sup> ... + 2<sup>n-2</sup>) + 2<sup>n-1</sup> <br/>
+<p align="center">
+    W = - (1 + 2 + 2<sup>2</sup> + 2<sup>3</sup> ... + 2<sup>n-2</sup>) + 2<sup>n-1</sup> <br/>
    = - (2<sup>n-1</sup> - 1) + 2<sup>n-1</sup> <br/>
    = 1
+</p>
  
 So, you can see in this case, either we are going bankrupt (probability of which is very less)
 or we are winning 1$. You must have got an intuition that we don't intend to play the game
@@ -59,11 +64,15 @@ Looking at an example for a better understanding:
 Consider an experiment where a coin is tossed 3 times in 3 seconds.
 
 The sample space for our experiment will be a set of all the possible outcomes -<br/>
-Ω = {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}
+<p align="center">
+    Ω = {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}
+</p>
 
 As the sample space is finite, we will take the σ - algebra, F (set of all the events possible),
 as the power set of Ω -<br/>
-F = 2<sup>Ω</sup>
+<p align="center">
+    F = 2<sup>Ω</sup>
+</p>
 
 Now starting with time t = 0,
 
@@ -73,7 +82,9 @@ know is our sample space for the experiment. Given an outcome w, the only events
 are Ω and φ. This is because we already know whether w will belong in Ω or not.
 
 Making a set of all the events that have been revealed,<br/>
-F<sub>0</sub> = {φ, Ω}
+<p align="center">
+    F<sub>0</sub> = {φ, Ω}
+</p>
 
 We can see that F<sub>0</sub> itself is a σ - algebra. This will be the first σ - algebra of our filtration.
 
@@ -83,15 +94,21 @@ The coin has been tossed once, and we have learnt some more information about th
 experiment. This extra information helps us reveal two new events (apart from Ω and φ).
 
 The event of the first toss is a head,<br/>
-A<sub>H</sub> = {HHH, HHT, HTH, HTT}<br/>
+<p align="center">
+    A<sub>H</sub> = {HHH, HHT, HTH, HTT}<br/>
+</p>
 And the event of the first toss is a tail,<br/>
-A<sub>T</sub> = {THH, THT, TTH, TTT}
+<p align="center">
+    A<sub>T</sub> = {THH, THT, TTH, TTT}
+</p>
 
 That is, given an outcome w, we will already know whether the first toss was an H or T, thus
 revealing the events A<sub>H</sub>  and A<sub>H</sub> .
 
 The set of all the events that have been revealed will now be,<br/>
-F<sub>1</sub> = {φ, Ω, A<sub>H</sub>, A<sub>T</sub>}
+<p align="center">
+    F<sub>1</sub> = {φ, Ω, A<sub>H</sub>, A<sub>T</sub>}
+</p>
 
 Notice that F<sub>1</sub> is a σ - algebra. This will be the next σ - algebra of our filtration.
 
@@ -100,15 +117,21 @@ Similarly, at time t = 2,
 The coin has now been tossed twice. The new information will reveal many new events.
 Some of them are,<br/>
 the event of the first two tosses is a head,<br/>
-A<sub>HH</sub>= {HHH, HHT}<br/>
+<p align="center">
+    A<sub>HH</sub>= {HHH, HHT}<br/>
+</p>
 the event of the first toss is a head and the second is a tail,<br/>
-A<sub>HT</sub> = {HTH, HTT}<br/>
+<p align="center">
+    A<sub>HT</sub> = {HTH, HTT}<br/>
+</p>
 and so on.
 
 Note that the unions and complements of the revealed events will also be revealed.
 
 The set of all the events that have been revealed will now be,<br/>
-F<sub>2</sub> = {φ, Ω, A<sub>H</sub>, A<sub>T</sub>, A<sub>HH</sub>, A<sub>HT</sub>, A<sub>TH</sub>, A<sub>TT</sub>, A<sup>C</sup><sub>HH</sub>, A<sup>C</sup><sub>HT</sub>, A<sup>C</sup><sub>TH</sub>, A<sup>C</sup><sub>TT</sub>, A<sub>HH</sub> U A<sub>HT</sub>, A<sub>TH</sub> U A<sub>TT</sub>, A<sub>HT</sub> U A<sub>TH</sub>, A<sub>HH</sub> U A<sub>TT</sub>}
+<p align="center">
+    F<sub>2</sub> = {φ, Ω, A<sub>H</sub>, A<sub>T</sub>, A<sub>HH</sub>, A<sub>HT</sub>, A<sub>TH</sub>, A<sub>TT</sub>, A<sup>C</sup><sub>HH</sub>, A<sup>C</sup><sub>HT</sub>, A<sup>C</sup><sub>TH</sub>, A<sup>C</sup><sub>TT</sub>, A<sub>HH</sub> U A<sub>HT</sub>, A<sub>TH</sub> U A<sub>TT</sub>, A<sub>HT</sub> U A<sub>TH</sub>, A<sub>HH</sub> U A<sub>TT</sub>}
+</p>
 
 Notice that F<sub>2</sub> is a σ - algebra. This will be the next σ - algebra of our filtration.
 
@@ -118,19 +141,28 @@ The experiment is complete. For any outcome w, we now have information about all
 This means all the events in the σ - algebra have been revealed.
 
 The set of all the events that have been revealed will now be,<br/>
-F<sub>3</sub> = F
+<p align="center">
+    F<sub>3</sub> = F
+</p>
 
 We can observe that these σ - algebras, F<sub>0</sub>, F<sub>1</sub>, F<sub>2</sub>, and F<sub>3</sub> are such that,<br/>
-F<sub>0</sub> ⊂ F<sub>1</sub> ⊂ F<sub>2</sub> ⊂ F<sub>3</sub> = F
+<p align="center">
+   F<sub>0</sub> ⊂ F<sub>1</sub> ⊂ F<sub>2</sub> ⊂ F<sub>3</sub> = F
+</p>
 
 This family of σ - algebras, {F<sub>n</sub>}<sub>0 ≤ n ≤ 3</sub> , can be called a filtration.
 
 Now that we have a clear understanding of filtrations, let us give a more formal definition:
 Given a probability space (Ω, F, P) and some T > 0,<br/>
 For 0 ≤ t ≤ T there exists a σ - algebra, F(t) such that<br/>
-F(t) ⊂ F<br/>
+<p align="center">
+    F(t) ⊂ F<br/>
+</p>
 and for some 0 ≤ s, t ≤ T and s ≤ t, the σ - algebras F(s) and F(t) are such that<br/>
-F(s) ⊆ F(t).
+<p align="center">
+    F(s) ⊆ F(t).
+</p>
+
 
 Then the family of σ-algebras → {F(t)}<sub>0 ≤ t ≤ T</sub> is called a filtration that is associated with the
 probability space (Ω, F, P).
@@ -155,9 +187,12 @@ basic mathematics underlying it to have delve more into it.
 space (Ω, F, P). Let X<sub>0</sub>, X<sub>1</sub>, X<sub>2</sub> … X<sub>n</sub> is an adapted sequence (X<sub>n</sub> ∈ F<sub>n</sub>) of integrable
 real valued random variable such that E(X<sub>n+1</sub>) < ∞, the sequence X<sub>0</sub>, X<sub>1</sub>, X<sub>2</sub> … X<sub>n</sub> is
 said to be a Martingale relative to the filtration {F<sub>n</sub>}<sub>n≥0</sub> if <br/>
- E (X<sub>n+1</sub> |F<sub>n</sub>) = X<sub>n</sub> (Martingale condition)
+<p align="center">
+    E (X<sub>n+1</sub> |F<sub>n</sub>) = X<sub>n</sub> (Martingale condition)
+</p>
  
 1. We have, <br/>
+<p align="center">
  E (X<sub>n+1</sub> |F<sub>n</sub>) = X<sub>n</sub> <br/>
  E (X<sub>n+k</sub> |F<sub>n</sub>) = E((X<sub>n+k</sub>|F<sub>n+k-1</sub>)|F<sub>n</sub>) (Using Tower’s property)<br/>
  = E(X<sub>n+k-1</sub>|F<sub>n</sub>) (Using Martingale)<br/>
@@ -166,23 +201,30 @@ said to be a Martingale relative to the filtration {F<sub>n</sub>}<sub>n≥0</su
 .<br/>
  = E(X<sub>n+1</sub>|F<sub>n</sub>)<br/>
  = X<sub>n</sub>
+</p>
  
 1.  The expectation of next value in sequence to be equal to current value, there are
 several types of martingales sequences, the most basic one is sums of independent,
 mean zero random variables. Let Y<sub>1</sub>, Y<sub>2</sub>... be such a series; then with following
 conditions,<br/>
- E(Y<sub>i</sub>) = 0<br/>
+<p align="center">
+    E(Y<sub>i</sub>) = 0<br/>
  F<sub>n</sub> = σ (Y<sub>1</sub>, Y<sub>2</sub>, Y<sub>3</sub>…. Y<sub>n</sub>)<br/>
+</p>
 the partial sums sequence:<br/>
- X<sub>n</sub> = Y<sub>1</sub> + Y<sub>2</sub> + Y<sub>3</sub> … + Y<sub>n</sub><br/>
+<p align="center">
+     X<sub>n</sub> = Y<sub>1</sub> + Y<sub>2</sub> + Y<sub>3</sub> … + Y<sub>n</sub><br/>
+</p>
 is a martingale in comparison to the natural filtering caused by the variables Y<sub>n</sub>. The
 linearity and stability features, as well as the independence law for conditional
 expectation, make this easy to verify:<br/>
- E (X<sub>n+1</sub> |F<sub>n</sub>) = E (X<sub>n</sub> +Y<sub>n+1</sub>  |F<sub>n</sub> )<br/>
+<p align="center">
+     E (X<sub>n+1</sub> |F<sub>n</sub>) = E (X<sub>n</sub> +Y<sub>n+1</sub>  |F<sub>n</sub> )<br/>
  = E (X<sub>n</sub> |F<sub>n</sub>) + E (Y<sub>n+1</sub>  |F<sub>n</sub> ) (Linearity)<br/>
  = X<sub>n</sub>  +E(Y<sub>n+1</sub> )<br/>
  = X<sub>n</sub> 
- 
+</p>
+
 Example:
 
 We went through a 3-coin toss example in the filtration part, now let's do the same
